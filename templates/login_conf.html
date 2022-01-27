@@ -1,0 +1,100 @@
+<html>
+    <head>
+        <style type="text/css">
+            .form-control {
+            display: inline-block;
+            vertical-align: middle;
+            width: auto;
+            height: 34px;
+            padding: 6px 12px;
+            font-size: 13px;
+            line-height: 1.42857143;
+            color: #555555;
+            background-color: #ffffff;
+            background-image: none;
+            border: 1px solid #cccccc;
+            border-radius: 4px;
+            }
+            .form-control::-moz-placeholder {
+            color: #999999;
+            opacity: 1;
+            }
+            .form-control:-ms-input-placeholder {
+            color: #999999;
+            }
+            .form-control::-webkit-input-placeholder {
+            color: #999999;
+            }
+
+            .btn {
+            display: inline-block;
+            margin-bottom: 0;
+            font-weight: normal;
+            text-align: center;
+            vertical-align: middle;
+            cursor: pointer;
+            background-image: none;
+            border: 1px solid transparent;
+            white-space: nowrap;
+            padding: 6px 12px;
+            font-size: 14px;
+            line-height: 1.42857143;
+            border-radius: 4px;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            color: #ffffff;
+            background-color: #3b5998;
+            border-color: #357ebd;
+            padding-right:15px;
+            }
+
+            /* additions */
+            .btn-inline {
+            height: 34px;
+            border-radius: 0 4px 4px 0;
+            margin-left: 95px;
+            margin-top: 120px;
+            padding-right: 50px;
+            padding-left:34px;
+            color:white;
+            }
+
+            .form-control { 
+            -webkit-box-shadow: none;
+            -moz-box-shadow: none;
+            box-shadow: none;
+            padding-left: 10px;
+            }
+
+            .form-control:focus { 
+            -webkit-box-shadow: none;
+            -moz-box-shadow: none;
+            box-shadow: none;
+            }
+            #cent {
+            position: absolute;
+            width: 600px;
+            height: 300px;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+            border: 5px solid black;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div id="cent">
+            <div style="background-color:#3b5998;color:white;height:80px;width:auto;margin-top:-25px;text-align:center;">
+                <h4 style="padding-top:20px;"> LOGIN YOU AS? </h4>
+            </div>
+                <button class="btn btn-primary btn-inline" onclick="window.location='{{ url_for('student_login') }}';" value="STUDENT"> STUDENT</button>
+                <button class="btn btn-primary btn-inline" onclick="window.location='{{ url_for('volunteer_login') }}';" value="VOLUNTEER" />VOLUNTEER</button>
+        </div>
+    </body>
+
+</html>

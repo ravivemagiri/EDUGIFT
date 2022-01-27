@@ -1,0 +1,613 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>EDUGIFT</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+ 
+    <link rel="manifest" href="#">
+    <link rel="shortcut icon" type="image/x-icon" href="{{ url_for('static', filename = 'img/logo/logo.png') }}">
+    <!-- Place favicon.ico in the root directory -->
+
+    <!-- CSS here -->
+
+
+    <link rel="stylesheet" type = "text/css" href="{{ url_for('static', filename = 'css/bootstrap.min.css') }}">
+    <link rel="stylesheet" type = "text/css" href="{{ url_for('static', filename = 'css/owl.carousel.min.css') }}">
+    <link rel="stylesheet" type = "text/css" href="{{ url_for('static', filename = 'css/animate.min.css') }}">
+    <link rel="stylesheet" type = "text/css" href="{{ url_for('static', filename = 'css/magnific-popup.css') }}">
+    <link rel="stylesheet" type = "text/css" href="{{ url_for('static', filename = 'css/fontawesome-all.min.css') }}">
+    <link rel="stylesheet" type = "text/css" href="{{ url_for('static', filename = 'css/themify-icons.css') }}">
+    <link rel="stylesheet" type = "text/css" href="{{ url_for('static', filename = 'css/slick.css') }}">
+    <link rel="stylesheet" type = "text/css" href="{{ url_for('static', filename = 'css/meanmenu.css') }}">
+    <link rel="stylesheet" type = "text/css" href="{{ url_for('static', filename = 'css/slick.css') }}">
+    <link rel="stylesheet" type = "text/css" href="{{ url_for('static', filename = 'css/default.css') }}">
+    <link rel="stylesheet" type = "text/css" href="{{ url_for('static', filename = 'css/style.css') }}">
+    <link rel="stylesheet" type = "text/css" href="{{ url_for('static', filename = 'css/responsive.css') }}">
+    <script src="https://apis.google.com/js/platform.js"></script>
+</head>
+
+<body>
+    <!--[if lte IE 9]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+        <![endif]-->
+
+    <!-- Add your site or application content here -->
+    <!-- header-start -->
+    <header id="home">
+        <div class="header-area">
+            <!-- header-bottom -->
+            <div class="header-bottom-area header-sticky" style="transition: .6s;">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-xl-2 col-lg-2 col-md-6 col-6">
+                            <div class="logo">
+                                <a href="index.html">
+                                    <img src="{{ url_for('static', filename = 'img/logo/logo.png') }}" height="100px" alt="">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-xl-10 col-lg-10 col-md-6 col-6">
+                            
+                            <div class="main-menu f-right">
+                                <nav id="mobile-menu" style="display: block;">
+                                    <ul>
+                                        <li>
+                                            <a href="#home">Home</a>
+                                        </li>
+                                        <li>
+                                            <a href="#about">ABOUT US</a>
+                                            
+                                        </li>
+            
+                                        <li>
+                                            <a href="#expert"> Our Advisors</a>
+                                            
+                                        </li>
+                                        <li>
+                                            <a href="#courses_here">UPCOMING EVENTS</a>
+                                            
+                                        </li>
+                                        <li>
+                                            <a href="{{ url_for('confirm_type_of_login') }}">REGISTER/LOGIN</a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="mobile-menu"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /end header-bottom -->
+        </div>
+    </header>
+    <!-- header-end -->
+    <!-- slider-start -->
+    <div class="slider-area pos-relative">
+        <div class="slider" >
+            
+            <div class="justify-content-center" style="margin-top:5px;border-top: 3px solid #3b5998;">
+                    <div class="row" id = "bgvideo">
+                    
+                        <video height="650px" width = "100%" loop="true" autoplay="autoplay" controls="controls" id="bgvideo"  muted style="pointer-events: none;">
+                            <source type="video/mp4" src={{ url_for('static', filename = 'a1.mp4') }}></source>
+                        </video>
+                        
+    
+                    
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    <!-- slider-end -->
+    <!-- about start -->
+    <div id="about" class="about-area pt-100 pb-70">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-7 col-lg-7">
+                    <div class="about-title-section mb-30">
+                        <h1>Welcome To EDUGIFT</h1>
+                        <p style="font-size:15px;color:black;"">Edu-Gift is an first ever <b>free of cost</b> <i>(or) </i> <b> Zero-cost</b>, online digital school platform that connects professional subject experts/volunteers to students who are poor, under-previliged and unable to afford to study, due to poverty .</p>
+                        <p style="color:black;">Our team started this mission to spread education free to all and to make each individual confident and reliable</p>
+                        <p style="font-style:normal;color:black; font-size:13px;"> <i>"Someone cannot help Everyone, But everyone can help someone"</i></p>
+                        <button class="theme-btn blue-bg-border mt-20"><span class="btn-text">Join us now</span></button>
+                    </div>
+                </div>
+                <div class="col-xl-5 col-lg-5">
+                    <div class="about-right-img mb-30">
+                        <img src="{{ url_for('static', filename = 'img/logo/logo.png') }}" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="row pt-65">
+                <div class="col-xl-4 col-lg-4 col-md-6">
+                    <div class="feature-wrapper mb-30">
+                        <div class="feature-title-heading">
+                            <h3>Scholarship Facility</h3>
+                            <span>01</span>
+                        </div>
+                        <div class="feature-text">
+                            <p>You focus on your career. We help you in Scholarships if your perform top among the students.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-6">
+                    <div class="feature-wrapper mb-30">
+                        <div class="feature-title-heading">
+                            <h3>Weekly Career Guidance</h3>
+                            <span>02</span>
+                        </div>
+                        <div class="feature-text">
+                            <p>Lets discuss, stay motivated by few champs & leaders. Let's enable sharing of the real knowledge around.</p>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-6">
+                    <div class="feature-wrapper mb-30">
+                        <div class="feature-title-heading">
+                            <h3>Special Rewards for Teachers/Volunteers</h3>
+                            <span>03</span>
+                        </div>
+                        <div class="feature-text">
+                            <p>Edugift values its volunteers/teachers and surprises with special rewards eventually.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- about end -->
+    
+    <!-- team start -->
+    <div class="team-area pt-95 pb-70">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-6 offset-xl-3 col-lg-8 offset-lg-2 col-md-10 offset-md-1">
+                    <div class="section-title mb-50 text-center">
+                        <div class="section-title-heading mb-20">
+                            <h1 class="primary-color" id="expert">Our Expert Advisors</h1>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="team-list">
+                <div class="row">
+                    <div class="col-xl-3 col-lg-3 col-md-6">
+                        <div class="team-wrapper mb-30">
+                            <div class="team-thumb">
+                                <img src=" {{ url_for('static', filename="img/team/team1.png" ) }}" alt="">
+                            </div>
+                            <div class="team-social-info text-center">
+                                <div class="team-social-para">
+                                    <p>Expert in English</p>
+                                </div>
+                                <div class="team-social-icon-list">
+                                    <ul>
+                                        <li><a href="#"><span class="ti-facebook"></span></a></li>
+                                        <li><a href="#"><span class="ti-twitter-alt"></span></a></li>
+                                        <li><a href="#"><span class="ti-google"></span></a></li>
+                                        <li><a href="#"><span class="ti-linkedin"></span></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="team-teacher-info text-center">
+                                <h1>Jhon Lisa</h1>
+                                <h2>English Teacher</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-3 col-md-6">
+                        <div class="team-wrapper mb-30">
+                            <div class="team-thumb">
+                                <img src=" {{ url_for('static', filename="img/team/team1.png" ) }}" alt="">
+                            </div>
+                            <div class="team-social-info text-center">
+                                <div class="team-social-para">
+                                    <p>Expert in Mathematics.</p>
+                                </div>
+                                <div class="team-social-icon-list">
+                                    <ul>
+                                        <li><a href="#"><span class="ti-facebook"></span></a></li>
+                                        <li><a href="#"><span class="ti-twitter-alt"></span></a></li>
+                                        <li><a href="#"><span class="ti-google"></span></a></li>
+                                        <li><a href="#"><span class="ti-linkedin"></span></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="team-teacher-info text-center">
+                                <h1>N. NeoLim</h1>
+                                <h2>Maths Teacher</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-3 col-md-6">
+                        <div class="team-wrapper mb-30">
+                            <div class="team-thumb">
+                                <img src=" {{ url_for('static', filename='img/team/team1.png' ) }}" alt="">
+                            </div>
+                            <div class="team-social-info text-center">
+                                <div class="team-social-para">
+                                    <p>Expert in Career Guidance.</p>
+                                </div>
+                                <div class="team-social-icon-list">
+                                    <ul>
+                                        <li><a href="#"><span class="ti-facebook"></span></a></li>
+                                        <li><a href="#"><span class="ti-twitter-alt"></span></a></li>
+                                        <li><a href="#"><span class="ti-google"></span></a></li>
+                                        <li><a href="#"><span class="ti-linkedin"></span></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="team-teacher-info text-center">
+                                <h1>J. Karthik</h1>
+                                <h2>Career Guidance Expert</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-3 col-md-6">
+                        <div class="team-wrapper mb-30">
+                            <div class="team-thumb">
+                                <img src=" {{ url_for('static', filename="img/team/team1.png" ) }}" alt="">
+                            </div>
+                            <div class="team-social-info text-center">
+                                <div class="team-social-para">
+                                    <p>Expert in physical sciences.</p>
+                                </div>
+                                <div class="team-social-icon-list">
+                                    <ul>
+                                        <li><a href="#"><span class="ti-facebook"></span></a></li>
+                                        <li><a href="#"><span class="ti-twitter-alt"></span></a></li>
+                                        <li><a href="#"><span class="ti-google"></span></a></li>
+                                        <li><a href="#"><span class="ti-linkedin"></span></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="team-teacher-info text-center">
+                                <h1>K. Mary Tin</h1>
+                                <h2>Physical Sciences Expert</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- team end -->
+        
+        <!-- <a href= "https://www.youtube.com/channel/UCWqJU29-y5Du136q90GDmYQ?sub_confirmation=1">subscribe</a> -->
+   
+    
+    <!-- events start -->
+    <div id="events" class="events-area events-bg-height pt-100 pb-95" style="background-image: url(img/courses/courses_bg.png)">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-6 offset-xl-3 col-lg-8 offset-lg-2 col-md-10 offset-md-1">
+                    <div class="section-title mb-50 text-center">
+                        <div class="section-title-heading mb-20">
+                            <h1 class="black-color">Upcoming OPEN TO ALL Events</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="events-list mb-30">
+                <div class="row">
+                    <div class="col-xl-6 col-lg-6">
+                        <div class="single-events mb-30">
+                            <div class="events-wrapper">
+                                <div class="events-inner d-flex">
+                                    <div class="events-thumb">
+                                        <img src=" {{ url_for('static', filename="img/events/meet_pic.png" ) }}"  alt="">
+                                    </div>
+                                    <div class="events-text white-bg">
+                                        <div class="event-text-heading mb-20">
+                                            <div class="events-calendar text-center f-left">
+                                                <span class="date">28</span>
+                                                <span class="month">Jan, 2022</span>
+                                            </div>
+                                            <div class="events-text-title clearfix">
+                                                <a href="#">
+                                                    <h4>CAREER GUIDANCE</h4>
+                                                </a>
+                                                <div class="time-area">
+                                                    <span class="ti-time"></span>
+                                                    <span class="published-time">04:00 PM - 06:00 PM</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="events-para">
+                                            <p>Come join us and clear all your concerns regarding the career movements.</p>
+                                        </div>
+                                        <div class="events-speaker">
+                                            <h2>Speaker : <span>J. Ranjeet Sohana</span></h2>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="single-events mb-30">
+                            <div class="events-wrapper">
+                                <div class="events-inner d-flex">
+                                    <div class="events-thumb">
+                                        <img src=" {{ url_for('static', filename="img/events/meet_pic.png" ) }}"  alt="">
+                                        
+                                    </div>
+                                    <div class="events-text white-bg">
+                                        <div class="event-text-heading mb-20">
+                                            <div class="events-calendar text-center f-left">
+                                                <span class="date">28</span>
+                                                <span class="month">Jan, 2022</span>
+                                            </div>
+                                            <div class="events-text-title clearfix">
+                                                <a href="#">
+                                                    <h4>Solve Maths Easy</h4>
+                                                </a>
+                                                <div class="time-area">
+                                                    <span class="ti-time"></span>
+                                                    <span class="published-time">9:00 AM - 11:00 AM</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="events-para">
+                                            <p>solve the mathematics easily and in a funny way. Join the session and learn from experts.</p>
+                                        </div>
+                                        <div class="events-speaker">
+                                            <h2>Speaker : <span>Sk. Jhani</span></h2>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-6 col-lg-6">
+                        <div class="single-events mb-30">
+                            <div class="events-wrapper">
+                                <div class="events-inner d-flex">
+                                    <div class="events-thumb">
+                                        <img src=" {{ url_for('static', filename="img/events/meet_pic.png" ) }}"  alt="">
+                                        
+                                    </div>
+                                    <div class="events-text white-bg" id ="courses_here">
+                                        <div class="event-text-heading mb-20">
+                                            <div class="events-calendar text-center f-left">
+                                                <span class="date">05</span>
+                                                <span class="month">Feb, 2022</span>
+                                            </div>
+                                            <div class="events-text-title clearfix">
+                                                <a href="#">
+                                                    <h4>Spoken English Sessions</h4>
+                                                </a>
+                                                <div class="time-area">
+                                                    <span class="ti-time"></span>
+                                                    <span class="published-time">03:00 PM - 05:00 PM</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="events-para">
+                                            <p>Lets know the hack how to speak confidently.</p>
+                                        </div>
+                                        <div class="events-speaker">
+                                            <h2>Speaker : <span>Ravi Vemagiri</span></h2>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="single-events mb-30">
+                            <div class="events-wrapper">
+                                <div class="events-inner d-flex">
+                                    <div class="events-thumb">
+                                        <img src=" {{ url_for('static', filename="img/events/meet_pic.png" ) }}"  alt="">
+                                    </div>
+                                    <div class="events-text white-bg">
+                                        <div class="event-text-heading mb-20">
+                                            <div class="events-calendar text-center f-left">
+                                                <span class="date">09</span>
+                                                <span class="month">Feb, 2022</span>
+                                            </div>
+                                            <div class="events-text-title clearfix">
+                                                <a href="#">
+                                                    <h4>COMPETITIVE HACKS</h4>
+                                                </a>
+                                                <div class="time-area">
+                                                    <span class="ti-time"></span>
+                                                    <span class="published-time">06:00 PM - 08:00 PM</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="events-para">
+                                            <p>Build intelligence to easily deal with competitive examination in quick time.</p>
+                                        </div>
+                                        <div class="events-speaker">
+                                            <h2>Speaker : <span>N. Sowjanya</span></h2>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    <!-- events end -->
+
+    <!-- counter start -->
+    <div class="counter-area">
+        <div class="container pt-90 pb-65">
+            <div class="row">
+                <div class="col-xl-3 col-lg-3 col-md-3">
+                    <div class="couter-wrapper mb-30 text-center">
+                        <img src="{{ url_for('static', filename = "img/counter/counter_icon1.png") }}" alt="">
+                        <span class="counter">10</span>
+                        <h3>Scholarship Eligible Students</h3>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-3 col-md-3">
+                    <div class="couter-wrapper mb-30 text-center">
+                        <img src="{{ url_for('static', filename = "img/counter/counter_icon2.png") }}" alt="">
+                        <span class="counter">2</span>
+                        <h3>Courses Till now</h3>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-3 col-md-3">
+                    <div class="couter-wrapper mb-30 text-center">
+                        <img src="{{ url_for('static', filename = "img/counter/counter_icon3.png") }}" alt="">
+                        <span class="counter">15</span>
+                        <h3>Active Students</h3>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-3 col-md-3">
+                    <div class="couter-wrapper mb-30 text-center">
+                        <img src="{{ url_for('static', filename = "img/counter/counter_icon4.png") }}" alt="">
+                        <span class="counter">10</span>
+                        <h3>Teachers/Volunteers Registered</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- counter end -->
+   
+   
+    <!-- subscribe start -->
+    <div class="subscribe-area">
+        <div class="container">
+            <div class="subscribe-box">
+                <div class="row">
+                    <div class="col-xl-10 offset-xl-1 col-lg-10 offset-lg-1 col-md-12">
+                        <div class="row justify-content-between">
+                            <div class="col-xl-6 col-lg-7 col-md-8">
+                                <div class="subscribe-text">
+                                    <h1>Subscribe</h1>
+                                    <span>Enter your email and get latest updates and offers subscribe us</span>
+                                </div>
+                            </div>
+                            <div class="col-xl-4 col-lg-5 col-md-4 justify-content-end">
+                                <div class="email-submit-form">
+                                    <div class="subscribe-form">
+                                        <form action="#">
+                                            <input placeholder="Enter your email" type="email">
+                                            <i class="fas fa-long-arrow-alt-right"></i>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- subscribe end -->
+    <!-- footer start -->
+    <footer id="Contact">
+        <div class="footer-area primary-bg pt-150">
+            <div class="container">
+                <div class="footer-top pb-35">
+                    <div class="row">
+                        <div class="col-xl-3 col-lg-4 col-md-6">
+                            <div class="footer-widget mb-30">
+                                <div class="footer-logo">
+                                    <img src="img/logo/logo.png" style = "height:100px;" alt="">
+                                </div>
+                                <div class="footer-para">
+                                    <p>A digital platform connecting professional experts to target backward students and educate in free of cost providing best opporutnities ahead.</p>
+                                </div>
+                                <div class="footer-socila-icon">
+                                    <span>Follow Us</span>
+                                    <div class="footer-social-icon-list">
+                                        <ul>
+                                            <li><a href="#"><span class="ti-facebook"></span></a></li>
+                                            <li><a href="#"><span class="ti-twitter-alt"></span></a></li>
+                                            <li><a href="#"><span class="ti-google"></span></a></li>
+                                            <li><a href="#"><span class="ti-pinterest"></span></a></li>
+                                           
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-4 col-md-6">
+                            <div class="footer-widget mb-30">
+                               
+                                <div class="footer-menu clearfix">
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-4 d-lg-none d-xl-block col-md-6">
+                            <div class="footer-widget mb-30">
+                               
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-4  col-md-6">
+                            <div class="footer-widget mb-30">
+                                <div class="footer-heading">
+                                    <h1>Contact Us</h1>
+                                </div>
+                                <div class="footer-contact-list">
+                                    <div class="single-footer-contact-info">
+                                        <span class="ti-headphone "></span>
+                                        <span class="footer-contact-list-text">+91 9704144938</span>
+                                    </div>
+                                    <div class="single-footer-contact-info">
+                                        <span class="ti-email "></span>
+                                        <span class="footer-contact-list-text">edusupport@gmail.com</span>
+                                    </div>
+                                    <div class="single-footer-contact-info">
+                                        <span class="ti-location-pin"></span>
+                                        <span class="footer-contact-list-text">Visakhapatnam, Andhrapradesh, India</span>
+                                    </div>
+                                </div>
+                                <div class="opening-time">
+                                    <span>Student Assitance support</span>
+                                    <span class="opening-date">
+                                        Sun - Sat, 24 * 7 available
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </footer>
+    <!-- footer end -->
+
+
+    <!-- JS here -->
+    <script src="js/vendor/modernizr-3.5.0.min.js"></script>
+    <script src="js/vendor/jquery-1.12.4.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/isotope.pkgd.min.js"></script>
+    <script src="js/one-page-nav-min.js"></script>
+    <script src="js/slick.min.js"></script>
+    <script src="js/ajax-form.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="js/jquery.meanmenu.min.js"></script>
+    <script src="js/jquery.scrollUp.min.js"></script>
+    <script src="js/jquery.barfiller.js"></script>
+    <script src="js/imagesloaded.pkgd.min.js"></script>
+    <script src="js/jquery.counterup.min.js"></script>
+    <script src="js/waypoints.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+
+</html>

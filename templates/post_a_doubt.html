@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en"> 
+    <head>
+        <title>STUDENT HOME</title>
+        
+        <!-- Meta -->
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <meta name="description" content="student home page">
+        <meta name="author" content="Xiaoying Riley at 3rd Wave Media">    
+        <link rel="shortcut icon" href="{{ url_for('static', filename = 'img/logo/logo.png') }}"> 
+        
+        <!-- FontAwesome JS-->
+        <script defer src="{{ url_for('static', filename = 'assets/plugins/fontawesome/js/all.min.js') }}"></script>
+        
+        <!-- App CSS -->  
+        <link id="theme-style" rel="stylesheet" href="{{ url_for('static', filename='assets/css/portal.css') }}">
+        
+
+        <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/> -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker-standalone.min.css" rel="stylesheet"/>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment-with-locales.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
+        <script type="text/javascript">
+          function TimePickerCtrl($) {
+              var startTime = $('#starttime').datetimepicker({
+                format: 'HH:mm'
+              });
+              
+              var endTime = $('#endtime').datetimepicker({
+                format: 'HH:mm',
+                minDate: startTime.data("DateTimePicker").date()
+              });
+              
+              function setMinDate() {
+                return endTime
+                  .data("DateTimePicker").minDate(
+                    startTime.data("DateTimePicker").date()
+                  )
+                ;
+              }
+              
+              var bound = false;
+              function bindMinEndTimeToStartTime() {
+              
+                return bound || startTime.on('dp.change', setMinDate);
+              }
+              
+              endTime.on('dp.change', () => {
+                bindMinEndTimeToStartTime();
+                bound = true;
+                setMinDate();
+              });
+            }
+            
+            $(document).ready(TimePickerCtrl);
+      </script>
+        <style type="text/css">
+          .container1{
+                margin-top:50px;
+                border:3px solid black;
+                padding-top: 50px; 
+                padding-bottom: 50px; 
+                box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+                transition: 0.3s;
+                width: 1000px;
+            }
+            .container1:hover {
+                box-shadow: 0 16px 16px 0 gray;
+                }
+                .btn-group button {
+                    background-color: #04AA6D; /* Green background */
+                    border: 1px solid green; /* Green border */
+                    color: white; /* White text */
+                    padding: 10px 24px; /* Some padding */
+                    width:200px;
+                    margin-left:370px;
+                    font-size: 16px;
+                    cursor: pointer; /* Pointer/hand icon */
+                   
+                    }
+
+              /* Clear floats (clearfix hack) */
+              .btn-group:after {
+                content: "";
+                clear: both;
+                display: table;
+              }
+
+              .btn-group button:not(:last-child) {
+                border-right: none; /* Prevent double borders */
+              }
+
+              /* Add a background color on hover */
+              .btn-group button:hover {
+                background-color: #3e8e41;
+              }
+        </style>
+    </head> 
+    
+    <body class="app">   	
+        <header class="app-header fixed-top">	   	            
+            <div class="app-header-inner">  
+                <div class="container-fluid py-2">
+                    <div class="app-header-content"> 
+                        <div class="row justify-content-between align-items-center">
+                        
+                        <div class="col-auto">
+                            <a id="sidepanel-toggler" class="sidepanel-toggler d-inline-block d-xl-none" href="#">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" role="img"><title>Menu</title><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg>
+                            </a>
+                        </div><!--//col-->
+                        <div class="search-mobile-trigger d-sm-none col">
+                            <i class="search-mobile-trigger-icon fas fa-search"></i>
+                        </div><!--//col-->
+                        <div class="app-search-box col">
+                            <form class="app-search-form">   
+                                <input type="text" placeholder="Search..." name="search" class="form-control search-input">
+                                <button type="submit" class="btn search-btn btn-primary" value="Search"><i class="fas fa-search"></i></button> 
+                            </form>
+                        </div><!--//app-search-box-->
+                        
+                        <div class="app-utilities col-auto">
+                            <div class="app-utility-item app-notifications-dropdown dropdown">    
+                                				        
+                            </div><!--//app-utility-item-->
+                            <div class="app-utility-item">
+                                
+                            </div><!--//app-utility-item-->
+                                    <div class="app-utility-item app-user-dropdown dropdown">
+                                <a class="dropdown-toggle" id="user-dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false"><img src="{{ url_for('static', filename='img/team/team1.png') }}" alt="user profile"></a>
+                                <ul class="dropdown-menu" aria-labelledby="user-dropdown-toggle">
+                                    <li><a class="dropdown-item" href="{{url_for('student_profile_page')}}">Account</a></li>
+                                    <li><hr class="dropdown-divider"></li>
+                                    <li><a class="dropdown-item" href="{{url_for('logout')}}">Log Out</a></li>
+                                </ul>
+                            </div><!--//app-user-dropdown--> 
+                        </div><!--//app-utilities-->
+                    </div><!--//row-->
+                    </div><!--//app-header-content-->
+                </div><!--//container-fluid-->
+            </div><!--//app-header-inner-->
+            <div id="app-sidepanel" class="app-sidepanel"> 
+                <div id="sidepanel-drop" class="sidepanel-drop"></div>
+                <div class="sidepanel-inner d-flex flex-column">
+                    <a href="#" id="sidepanel-close" class="sidepanel-close d-xl-none">&times;</a>
+                    <div class="app-branding">
+                        <a class="app-logo" href="#"><img class="logo-icon me-2" src="{{ url_for('static', filename = 'img/logo/logo.png') }}" alt="logo"><span class="logo-text">EDUGIFT</span></a>
+        
+                    </div><!--//app-branding-->  
+                    
+                    <nav id="app-nav-main" class="app-nav app-nav-main flex-grow-1">
+                        <ul class="app-menu list-unstyled accordion" id="menu-accordion">
+                            <li class="nav-item">
+                                <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
+                                <a class="nav-link" href="{{url_for('student_home')}}">
+                                    <span class="nav-icon">
+                                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-house-door" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" d="M7.646 1.146a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 .146.354v7a.5.5 0 0 1-.5.5H9.5a.5.5 0 0 1-.5-.5v-4H7v4a.5.5 0 0 1-.5.5H2a.5.5 0 0 1-.5-.5v-7a.5.5 0 0 1 .146-.354l6-6zM2.5 7.707V14H6v-4a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 .5.5v4h3.5V7.707L8 2.207l-5.5 5.5z"/>
+              <path fill-rule="evenodd" d="M13 2.5V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"/>
+            </svg>
+                                     </span>
+                                     <span class="nav-link-text">Overview</span>
+                                </a><!--//nav-link-->
+                            </li><!--//nav-item-->
+                            <li class="nav-item">
+                                <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
+                                <a class="nav-link" href="{{ url_for('student_profile_page') }}">
+                                    <span class="nav-icon">
+                                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-card-list" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <path fill-rule="evenodd" d="M14.5 3h-13a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13z"/>
+      <path fill-rule="evenodd" d="M5 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 5 8zm0-2.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0 5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5z"/>
+      <circle cx="3.5" cy="5.5" r=".5"/>
+      <circle cx="3.5" cy="8" r=".5"/>
+      <circle cx="3.5" cy="10.5" r=".5"/>
+    </svg>
+                                     </span>
+                                     <span class="nav-link-text">My Profile</span>
+                                </a><!--//nav-link-->
+                            </li><!--//nav-item-->
+    
+                            <li class="nav-item">
+                                <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
+                                <a class="nav-link" href="{{ url_for('volunteer_uploaded_videos')}}">
+                                    <span class="nav-icon">
+                                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-camera-video" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <path fill-rule="evenodd" d="M14.5 3h-13a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13z"/>
+      <path fill-rule="evenodd" d="M5 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 5 8zm0-2.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0 5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5z"/>
+      <circle cx="3.5" cy="5.5" r=".5"/>
+      <circle cx="3.5" cy="8" r=".5"/>
+      <circle cx="3.5" cy="10.5" r=".5"/>
+    </svg>
+                                     </span>
+                                     <span class="nav-link-text">Instructor Uploaded Videos</span>
+                                </a><!--//nav-link-->
+                            </li><!--//nav-item-->
+    
+                            <li class="nav-item">
+                                <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
+                                <a class="nav-link" href="{{ url_for('volunteer_sessions')}}">
+                                    <span class="nav-icon">
+                                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-card-list" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <path fill-rule="evenodd" d="M14.5 3h-13a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13z"/>
+      <path fill-rule="evenodd" d="M5 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 5 8zm0-2.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0 5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5z"/>
+      <circle cx="3.5" cy="5.5" r=".5"/>
+      <circle cx="3.5" cy="8" r=".5"/>
+      <circle cx="3.5" cy="10.5" r=".5"/>
+    </svg>
+                                     </span>
+                                     <span class="nav-link-text">VIEW LIVE SESSIONS FROM INSTRUCTORS</span>
+                                </a><!--//nav-link-->
+                            </li><!--//nav-item-->
+    
+                            <li class="nav-item">
+                                <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
+                                <a class="nav-link active" href="#">
+                                    <span class="nav-icon">
+                                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-card-list" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <path fill-rule="evenodd" d="M14.5 3h-13a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13z"/>
+      <path fill-rule="evenodd" d="M5 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 5 8zm0-2.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0 5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5z"/>
+      <circle cx="3.5" cy="5.5" r=".5"/>
+      <circle cx="3.5" cy="8" r=".5"/>
+      <circle cx="3.5" cy="10.5" r=".5"/>
+    </svg>
+                                     </span>
+                                     <span class="nav-link-text"></span>POST MY DOUBT TO INSTRUCTOR</span>
+                                </a><!--//nav-link-->
+                            </li><!--//nav-item-->
+                                                
+                        </ul><!--//app-menu-->
+                    </nav><!--//app-nav-->
+                    
+                   
+                </div><!--//sidepanel-inner-->
+            </div><!--//app-sidepanel-->
+        </header><!--//app-header-->
+
+    
+    
+    <div class="app-wrapper">
+	    
+	    <div class="app-content pt-3 p-md-3 p-lg-4">
+		    <div class="container-xl" style="margin-top:100px; border:2px solid black;padding:10px;" >
+			    
+          <form method="POST" action="{{ url_for('student_doubt_posting') }}">
+            
+            <div class="container">
+                    <div class="header-group" style="background-color: #3b5998; color:white; height:50px;margin-top:-70px; width:100%">
+                        <h1 align="center" style="color: white;">STUDENT QUERY RECEIVER</h1>
+                    </div>
+                    <hr/>
+                    <div class="row">
+                        <div class="col-xs-6">
+                        <div class="form-group">
+                            <label for="TOPIC_NAME" class="col-form-label">TOPIC REGARDING YOUR QUESTION</label>
+                            <div class='input-group date' id=''>
+                            <input type='text' style="width:850px" class="form-control" id="topic_name"  name="topic_name"/>
+                            </div>
+                        </div>
+                        </div>
+                        
+                    </div>
+            
+                    <div class="row">
+                        <div class="col-xs-6">
+                          <div class="form-group">
+                            <label for="TOPIC_NAME" class="col-form-label">QUERY POSTING DATE & TIME</label>
+                            <div class='input-group date' id=''>
+                              <input type='text' style="width:850px" class="form-control" id="posting_date"  name="posting_date"/>
+                            </div>
+                          </div>
+                        </div>
+                        
+                    </div>
+            
+                    <div class="row">
+                        <div class="col-xs-6">
+                          <div class="form-group">
+                            <label for="TOPIC_NAME" class="col-form-label">QUERY DESCRIPTION</label>
+                            <div class='input-group date' id=''>
+                              <textarea style="border:1px solid gray;" placeholder="Elaborate your query here. so that teachers help you clearly." rows="4" cols="114" id = "query_desc" name="query_desc" >
+            
+            
+                              </textarea>
+                            </div>
+                          </div>
+                        </div>
+                        
+                    </div>
+                    <p>
+                      
+                    </p>
+                    <div class="row">
+                        <div class="col-xs-6">
+                          <div class="form-group">
+                            <div class='input-group' id='starttime'>
+                                <div class="btn-group">
+                                    <button align="center" type = "submit">Create my Session</button>
+                                  </div>
+                             
+                            </div>
+                          </div>
+                        </div>
+                        
+                    </div>
+                    <p><h2>{{ msg }}</h2></p>
+                    
+            </div>
+            </form>
+            <script type="text/javascript">
+              document.getElementById('posting_date').value = Date();
+            </script>
+		    </div><!--//container-fluid-->
+	    </div><!--//app-content-->
+	    
+	    
+	    
+    </div><!--//app-wrapper-->    					
+
+	<script src="{{ url_for('static', filename='assets/plugins/popper.min.js') }}"></script>
+	<script src="{{ url_for('static', filename='assets/plugins/bootstrap/js/bootstrap.min.js') }}"></script>
+	<script src="{{ url_for('static', filename='assets/plugins/chart.js/chart.min.js') }}"></script>
+	<script src="{{ url_for('static', filename='assets/js/index-charts.js') }}"></script>
+	<script src="{{ url_for('static', filename='assets/js/app.js') }}"></script>
+
+</body>
+</html> 
+
